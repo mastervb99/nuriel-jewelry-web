@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { getFeaturedProducts, featuredCollections } from '@/data/products';
 import { getAllCategories } from '@/data/categories';
 
@@ -70,10 +71,12 @@ export default function HomePage() {
               <div key={product.id} className="product-card group">
                 <div className="aspect-jewelry bg-gradient-to-br from-pearl-100 to-ocean-100 rounded-lg mb-4 relative overflow-hidden">
                   {/* Actual product image */}
-                  <img
+                  <Image
                     src={product.images.main}
                     alt={product.name}
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   <div className="image-overlay"></div>
                 </div>

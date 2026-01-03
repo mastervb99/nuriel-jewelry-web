@@ -1,12 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'export',
-  trailingSlash: true,
+  // Remove static export for now to fix image serving
   images: {
-    unoptimized: true, // Required for static export
+    unoptimized: false, // Allow Next.js image optimization
   },
-  // Disable server-side features for static export
   experimental: {
     webpackBuildWorker: true,
   },

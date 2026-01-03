@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { getProductsByCategory } from '@/data/products';
 import { getAllCategories } from '@/data/categories';
 
@@ -59,10 +60,12 @@ export default function EarringsPage() {
                 <div key={product.id} className="product-card group">
                   <div className="aspect-jewelry bg-gradient-to-br from-light-aurora via-pearl-100 to-light-rose rounded-lg mb-6 relative overflow-hidden">
                     {/* Actual product image */}
-                    <img
+                    <Image
                       src={product.images.main}
                       alt={product.name}
-                      className="w-full h-full object-cover"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                     />
 
                     {/* Featured badge */}
