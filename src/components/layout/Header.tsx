@@ -21,7 +21,6 @@ export default function Header() {
     { name: 'Bracelets', href: '/categories/bracelets' },
     { name: 'Rings', href: '/categories/rings' },
     { name: 'Earrings', href: '/categories/earrings' },
-    { name: 'About', href: '/about' },
   ];
 
   return (

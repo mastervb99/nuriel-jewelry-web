@@ -58,13 +58,12 @@ export default function EarringsPage() {
               {products.map((product) => (
                 <div key={product.id} className="product-card group">
                   <div className="aspect-jewelry bg-gradient-to-br from-light-aurora via-pearl-100 to-light-rose rounded-lg mb-6 relative overflow-hidden">
-                    {/* Product image placeholder - will show actual images when available */}
-                    <div className="absolute inset-0 flex items-center justify-center text-pearl-400">
-                      <div className="text-center">
-                        <div className="text-6xl mb-3">✨</div>
-                        <div className="text-sm font-medium text-pearl-600">{product.name}</div>
-                      </div>
-                    </div>
+                    {/* Actual product image */}
+                    <img
+                      src={product.images.main}
+                      alt={product.name}
+                      className="w-full h-full object-cover"
+                    />
 
                     {/* Featured badge */}
                     {product.featured && (
@@ -113,26 +112,13 @@ export default function EarringsPage() {
                       </div>
                     )}
 
-                    <div className="flex justify-between items-center pt-2">
-                      <span className="text-2xl font-bold text-ocean-deep">
-                        {product.price?.display}
-                      </span>
-                      <div className="flex gap-3">
-                        <Link
-                          href={`/products/${product.id}`}
-                          className="text-sm font-medium text-pearl-600 hover:text-ocean-deep transition-colors"
-                        >
-                          Learn More
-                        </Link>
-                        <a
-                          href={`https://nuriel-jewelry.myshopify.com/products/${product.shopifyHandle}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="btn-mystical text-sm px-4 py-2"
-                        >
-                          Shop This Piece
-                        </a>
-                      </div>
+                    <div className="flex justify-center pt-2">
+                      <Link
+                        href={`/products/${product.id}`}
+                        className="text-sm font-medium text-pearl-600 hover:text-ocean-deep transition-colors"
+                      >
+                        Learn More
+                      </Link>
                     </div>
                   </div>
                 </div>

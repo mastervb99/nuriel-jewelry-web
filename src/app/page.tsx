@@ -37,12 +37,9 @@ export default function HomePage() {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex justify-center">
               <Link href="/categories/necklaces" className="btn-mystical">
                 Explore Collections
-              </Link>
-              <Link href="/about" className="btn-light">
-                Our Story
               </Link>
             </div>
           </div>
@@ -72,23 +69,19 @@ export default function HomePage() {
             {featuredProducts.slice(0, 4).map((product, index) => (
               <div key={product.id} className="product-card group">
                 <div className="aspect-jewelry bg-gradient-to-br from-pearl-100 to-ocean-100 rounded-lg mb-4 relative overflow-hidden">
-                  {/* Placeholder for product image */}
-                  <div className="absolute inset-0 flex items-center justify-center text-pearl-500">
-                    <div className="text-center">
-                      <div className="text-4xl mb-2">✨</div>
-                      <div className="text-sm font-medium">{product.name}</div>
-                    </div>
-                  </div>
+                  {/* Actual product image */}
+                  <img
+                    src={product.images.main}
+                    alt={product.name}
+                    className="w-full h-full object-cover"
+                  />
                   <div className="image-overlay"></div>
                 </div>
 
                 <div className="space-y-3">
                   <h3 className="text-xl font-semibold text-pearl-800">{product.name}</h3>
                   <p className="text-mystical text-sm line-clamp-2">{product.description}</p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-2xl font-bold text-ocean-deep">
-                      {product.price?.display}
-                    </span>
+                  <div className="flex justify-center">
                     <Link
                       href={`/products/${product.id}`}
                       className="text-sm font-medium text-pearl-600 hover:text-ocean-deep transition-colors"
@@ -166,8 +159,8 @@ export default function HomePage() {
               like gentle currents, every ring holds the mystery of deep waters, and every piece whispers the
               ancient secrets shared between moonlight and waves.
             </p>
-            <Link href="/about" className="btn-mystical">
-              Discover Our Journey
+            <Link href="/categories/necklaces" className="btn-mystical">
+              Explore More Pieces
             </Link>
           </div>
         </div>
