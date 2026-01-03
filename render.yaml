@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: nuriel-jewelry
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: "18"
+      - key: NEXT_PUBLIC_SHOPIFY_DOMAIN
+        value: "nuriel-jewelry.myshopify.com"
+      - key: NEXT_PUBLIC_SITE_URL
+        value: "https://nuriel-jewelry.onrender.com"
+    staticPublishPath: ./out
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: DENY
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /images/*
+        name: Cache-Control
+        value: public, max-age=86400
+    routes:
+      - type: redirect
+        source: /home
+        destination: /
+        permanent: true
