@@ -1,26 +1,172 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* Nuriel Design System - Ocean/Pearl/Light Theme */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Primary Ocean/Pearl Tones */
+  --pearl-white: #fefefe;
+  --pearl-cream: #faf9f7;
+  --ocean-mist: #e8f4f8;
+  --ocean-blue: #4a90a4;
+  --ocean-deep: #2c5f70;
+
+  /* Light/Ethereal Accents */
+  --golden-light: #f4e4bc;
+  --rose-light: #f7e7e1;
+  --aurora-light: #e1f0ff;
+
+  /* Mystical Gradients */
+  --ocean-gradient: linear-gradient(135deg, #4a90a4 0%, #2c5f70 100%);
+  --pearl-gradient: linear-gradient(135deg, #fefefe 0%, #faf9f7 50%, #e8f4f8 100%);
+  --aurora-gradient: linear-gradient(135deg, #e1f0ff 0%, #f7e7e1 50%, #f4e4bc 100%);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    @apply bg-pearl-gradient text-pearl-800 font-sans antialiased;
+    background: var(--pearl-gradient);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-pearl-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-pearl-400 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-pearl-500;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Glassmorphism effect for cards */
+  .glass {
+    @apply bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl;
+  }
+
+  .glass-dark {
+    @apply bg-pearl-700/20 backdrop-blur-md border border-pearl-600/30 rounded-2xl;
+  }
+
+  /* Mystical button styles */
+  .btn-mystical {
+    @apply px-6 py-3 bg-ocean-gradient text-white font-medium rounded-full
+           hover:shadow-lg hover:scale-105 transform transition-all duration-300
+           focus:outline-none focus:ring-2 focus:ring-pearl-400 focus:ring-offset-2;
+  }
+
+  .btn-light {
+    @apply px-6 py-3 bg-aurora-gradient text-pearl-700 font-medium rounded-full
+           hover:shadow-lg hover:scale-105 transform transition-all duration-300
+           focus:outline-none focus:ring-2 focus:ring-light-aurora focus:ring-offset-2;
+  }
+
+  /* Product card styles */
+  .product-card {
+    @apply glass p-6 hover:shadow-xl hover:scale-105 transform transition-all duration-500
+           cursor-pointer group;
+  }
+
+  .product-card:hover {
+    background: linear-gradient(135deg, rgba(255,255,255,0.3) 0%, rgba(232,244,248,0.4) 100%);
+  }
+
+  /* Floating animation for hero elements */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .float:nth-child(even) {
+    animation-delay: -3s;
+  }
+
+  /* Wave effect for decorative elements */
+  .wave {
+    animation: wave 3s ease-in-out infinite;
+  }
+
+  /* Glow effect for featured items */
+  .glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  /* Typography styles */
+  .heading-mystical {
+    @apply text-4xl md:text-6xl font-bold bg-gradient-to-r from-pearl-600 to-pearl-800
+           bg-clip-text text-transparent;
+  }
+
+  .text-mystical {
+    @apply text-pearl-600 leading-relaxed;
+  }
+
+  /* Navigation styles */
+  .nav-link {
+    @apply text-pearl-600 hover:text-pearl-800 transition-colors duration-300
+           relative after:absolute after:bottom-0 after:left-0 after:w-0
+           after:h-0.5 after:bg-pearl-600 after:transition-all after:duration-300
+           hover:after:w-full;
+  }
+
+  /* Image overlay styles */
+  .image-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-pearl-900/60 to-transparent
+           opacity-0 group-hover:opacity-100 transition-opacity duration-300;
+  }
+
+  /* Responsive grid layouts */
+  .jewelry-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8;
+  }
+
+  .featured-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12;
+  }
+}
+
+@layer utilities {
+  /* Custom utilities */
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+
+  /* Backdrop blur utilities */
+  .backdrop-blur-xs {
+    backdrop-filter: blur(2px);
+  }
+
+  /* Custom aspect ratios for jewelry images */
+  .aspect-jewelry {
+    aspect-ratio: 3 / 4;
+  }
+
+  .aspect-hero {
+    aspect-ratio: 16 / 9;
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
