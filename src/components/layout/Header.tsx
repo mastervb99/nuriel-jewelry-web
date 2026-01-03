@@ -39,7 +39,7 @@ export default function Header() {
             className="flex items-center space-x-2 group"
           >
             <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-pearl-600 to-ocean-deep bg-clip-text text-transparent group-hover:scale-105 transition-transform duration-300">
-              Nuriel
+              Nuriel Jewelry
             </div>
             <div className="hidden sm:block text-sm text-pearl-600 italic">
               Where Light Meets Ocean

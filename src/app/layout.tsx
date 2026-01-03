@@ -10,9 +10,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Nuriel Jewelry - Where Light Meets Ocean",
-  description: "Discover ethereal jewelry collections inspired by the mystical dance of light across ocean waves. Handcrafted necklaces, bracelets, rings, and earrings.",
-  keywords: "jewelry, necklaces, bracelets, rings, earrings, handcrafted, ocean-inspired, mystical, ethereal",
+  title: "Nuriel Jewelry - Unique Baroque Pearl Jewelry",
+  description: "Unique designed and high quality Baroque Pearl pieces. Discover elegant necklaces, earrings, bracelets, and rings with free U.S shipping.",
+  keywords: "baroque pearl jewelry, pearl necklaces, pearl earrings, pearl bracelets, pearl rings, handcrafted jewelry, unique jewelry, free shipping",
   authors: [{ name: "Nuriel Jewelry" }],
   openGraph: {
     title: "Nuriel Jewelry - Where Light Meets Ocean",

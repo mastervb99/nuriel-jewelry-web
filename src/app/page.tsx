@@ -26,14 +26,14 @@ export default function HomePage() {
             {/* Main Heading */}
             <div className="space-y-4">
               <h1 className="heading-mystical">
-                <span className="block">Nuriel</span>
+                <span className="block">Nuriel Jewelry</span>
                 <span className="block text-2xl md:text-3xl font-normal bg-gradient-to-r from-ocean-blue to-pearl-600 bg-clip-text text-transparent">
-                  Where Light Meets Ocean
+                  Unique Baroque Pearl Pieces
                 </span>
               </h1>
               <p className="text-xl md:text-2xl text-mystical max-w-3xl mx-auto leading-relaxed">
-                Discover ethereal jewelry collections inspired by the mystical dance of light across ocean waves.
-                Each piece captures the essence of natural beauty and timeless elegance.
+                Unique designed and high quality Baroque Pearl pieces.
+                Each handcrafted piece celebrates the natural beauty of baroque pearls with free U.S shipping.
               </p>
             </div>
 
